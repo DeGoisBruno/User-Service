@@ -70,6 +70,15 @@
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>7.7.0</version> <!-- Latest version found at https://central.sonatype.com/ -->
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase> <!-- This ensures the code is generated during the Maven generate-sources phase -->
+                        <goals>
+                            <goal>generate</goal> <!-- This is the goal that triggers code generation -->
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <inputSpec>${project.basedir}/src/main/resources/openapi-spec.yml</inputSpec>
                     <generatorName>spring</generatorName>
